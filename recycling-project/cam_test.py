@@ -1,0 +1,38 @@
+import cv2
+
+cap = cv2.VideoCapture(0)
+
+if not cap.isOpened():
+    print("Cannot open camera")
+    exit()
+
+ret, frame = cap.read()
+
+if not ret:
+    print("Cannot receive frame")
+    cap.release()
+    exit()
+
+cv2.imwrite("frame.jpg", frame)
+
+cap.release()
+print("Saved frame.jpg")
+
+cap = cv2.VideoCapture(19)
+
+if not cap.isOpened():
+    print("Cannot open camera")
+    exit()
+
+ret, frame = cap.read()
+
+if not ret:
+    print("Cannot receive frame")
+    cap.release()
+    exit()
+
+cv2.imwrite("frame.jpg", frame)
+
+cap.release()
+print("Saved frame.jpg")
+
